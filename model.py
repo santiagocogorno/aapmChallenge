@@ -275,6 +275,9 @@ class UNet3D(object):
         # The correct way may need much more memory, and more importantly, it probably does not matter...
         for i in range(100):
             n = np.random.choice(len(self.training_paths))
+            print(self.training_paths[n])
+            print(self.roi[0])
+            print(self.im_size)
             images, _ = read_training_inputs(self.training_paths[n], self.roi[0], self.im_size)
             means.append(np.mean(images))
             stds.append(np.std(images))
